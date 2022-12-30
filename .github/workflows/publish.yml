@@ -1,4 +1,8 @@
 name: build dockerfile
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   push:
