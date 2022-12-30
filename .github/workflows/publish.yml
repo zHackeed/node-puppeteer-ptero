@@ -6,8 +6,15 @@ on:
 
 jobs:
   push:
-    name: "nodejs_puppeteer_image"
+    name: "nodejs_${{ matrix.tag }}"
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        tag:
+          - 16
+          - 17
+          - 18
     steps:
       - name: Git checkout for Github repository workspace
         uses: actions/checkout@v3
@@ -32,8 +39,8 @@ jobs:
         uses: docker/build-push-action@c84f38281176d4c9cdb1626ffafcd6b3911b5d94
         with:
           context: ./
-          file: ./Dockerfile
+          file: ./${{ matrix.tag }}/Dockerfile
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/zhackeed/node-puppeteer-ptero:nodejs_puppeteer_image
+            ghcr.io/zhackeed/node-puppeteer-ptero:nodejs_puppeteer_image_v${{ matrix.tag }}
