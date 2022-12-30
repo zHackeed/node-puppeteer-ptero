@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install gnupg wget -y && \
   apt-get install google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-khmeros fonts-kacst fonts-freefont-ttf libxss1 -y --no-install-recommends && \
   rm -rf /var/lib/apt/lists/*  && \
   useradd -m -d /home/container container && \
-  && locale-gen en_US.UTF-8
+  locale-gen en_US.UTF-8
 
 
 ENV LC_ALL=en_US.UTF-8
