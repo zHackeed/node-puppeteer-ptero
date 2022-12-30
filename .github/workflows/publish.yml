@@ -29,11 +29,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push image
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@c84f38281176d4c9cdb1626ffafcd6b3911b5d94
         with:
           context: ./
           file: ./Dockerfile
-          platforms: linux/amd64, linux/arm64
+          platforms: linux/amd64
           push: true
           tags: |
             ghcr.io/zhackeed/node-puppeteer-ptero:nodejs_puppeteer_image
