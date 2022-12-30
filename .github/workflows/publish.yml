@@ -36,4 +36,4 @@ jobs:
           platforms: linux/amd64, linux/arm64
           push: true
           tags: |
-            ghcr.io/zHackeed/node-puppeteer-ptero:nodejs_puppeteer_image
+            ghcr.io/zhackeed/node-puppeteer-ptero:nodejs_puppeteer_image
